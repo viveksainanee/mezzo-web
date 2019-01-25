@@ -19,6 +19,7 @@ class Form extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
+    this.props.updateLocInHome(this.state);
   }
 
   render() {
