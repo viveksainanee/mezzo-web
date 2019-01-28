@@ -12,13 +12,15 @@ class MezzoHome extends Component {
     this.updateLocInHome = this.updateLocInHome.bind(this);
   }
 
-  updateLocInHome(locNum, searchValue) {
+  updateLocInHome(formState) {
     this.setState({
-      [locNum]: searchValue
+      loc1: formState.loc1,
+      loc2: formState.loc2
     });
   }
 
   render() {
+    console.log('this.state is', this.state);
     return (
       <div>
         <Form updateLocInHome={this.updateLocInHome} />

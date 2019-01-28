@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import BizCard from './BizCard';
 
 class BizList extends Component {
   constructor(props) {
@@ -11,13 +12,18 @@ class BizList extends Component {
 
   async componentDidMount() {
     let businessesResponse = await axios.get('http://localhost:3001/search');
-    console.log(businessesResponse.data); // array of objects
-    businessesResponse = businessesResponse.data.map(business => business.name);
-    this.setState(st => ({ businesses: businessesResponse })); // errors out because
+    businessesResponse = businessesResponse.data.map(business => ({
+      name: business.name,
+      image_url: business.image_url
+    }));
+    this.setState(st => ({ businesses: businessesResponse }));
   }
 
   render() {
-    return <div>{this.state.businesses}</div>;
+    let bizCards = this.state.businesses.map(business => (
+      <BizCard business={business} />
+    ));
+    return <div>{bizCards}</div>;
   }
 }
 
