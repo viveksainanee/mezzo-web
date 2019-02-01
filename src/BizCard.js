@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './BizCard.css';
 
 class BizCard extends Component {
   render() {
     return (
-      <div>
-        <img src={this.props.business.image_url} width={100} />
-        {this.props.business.name}
+      <div className="BizCard">
+        <img src={this.props.business.image_url} width={300} />
+        <div className="business-name"> {this.props.business.name}</div>
       </div>
     );
   }

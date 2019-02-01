@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import uuid from 'uuid/v4';
 import BizCard from './BizCard';
 
 class BizList extends Component {
@@ -10,18 +10,15 @@ class BizList extends Component {
     };
   }
 
-  async componentDidMount() {
-    let businessesResponse = await axios.get('http://localhost:3001/search');
-    businessesResponse = businessesResponse.data.map(business => ({
-      name: business.name,
-      image_url: business.image_url
-    }));
-    this.setState(st => ({ businesses: businessesResponse }));
+  async componentDidUpdate() {
+    // console.log('CDM2 locations are', this.props.locations);
   }
 
   render() {
-    let bizCards = this.state.businesses.map(business => (
-      <BizCard business={business} />
+    console.log('RENDER locations are', this.props.locations);
+
+    let bizCards = this.props.businesses.map(business => (
+      <BizCard business={business} key={uuid()} />
     ));
     return <div>{bizCards}</div>;
   }

@@ -38,12 +38,7 @@ class Form extends Component {
           value={this.state.loc2}
           placeholder="Second Location"
         />
-        <input
-          name="submit"
-          type="button"
-          onChange={this.handleChange}
-          value="Submit"
-        />
+        <input type="submit" onChange={this.handleSubmit} value="Submit" />
       </form>
     );
   }

@@ -1,0 +1,10 @@
+.BizCard {
+  background-color: lavender;
+  margin: 30px;
+}
+
+.business-name {
+  font-family: 'Libre-Franklin', sans-serif;
+  font-weight: 800;
+  font-size: 35px;
+}
