@@ -14,7 +14,11 @@ class MezzoHome extends Component {
   }
 
   async updateLocInHome(formState) {
-    let businessesResponse = await axios.get('http://localhost:3001/search');
+    let businessesResponse = await axios.get(
+      `http://localhost:3001/search?loc1=${formState.loc1}&loc2=${
+        formState.loc2
+      }`
+    );
     businessesResponse = businessesResponse.data.map(business => ({
       name: business.name,
       image_url: business.image_url
