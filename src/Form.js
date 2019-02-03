@@ -19,7 +19,7 @@ class Form extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.updateLocInHome(this.state);
+    this.props.fetchBusinesses(this.state);
   }
 
   render() {

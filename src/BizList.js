@@ -10,13 +10,7 @@ class BizList extends Component {
     };
   }
 
-  async componentDidUpdate() {
-    // console.log('CDM2 locations are', this.props.locations);
-  }
-
   render() {
-    console.log('RENDER locations are', this.props.locations);
-
     let bizCards = this.props.businesses.map(business => (
       <BizCard business={business} key={uuid()} />
     ));
