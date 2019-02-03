@@ -5,8 +5,17 @@ class BizCard extends Component {
   render() {
     return (
       <div className="BizCard">
-        <img src={this.props.business.image_url} width={300} alt="business" />
         <div className="business-name"> {this.props.business.name}</div>
+        <div className="business-rating">
+          {this.props.business.rating}, {this.props.business.review_count}{' '}
+          Reviews
+        </div>
+        <div className="business-price">{this.props.business.price}</div>
+        <img
+          className="business-image"
+          src={this.props.business.image_url}
+          alt="business"
+        />
       </div>
     );
   }

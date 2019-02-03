@@ -23,7 +23,10 @@ class MezzoHome extends Component {
     //reformat data to just the info we need
     businessesResponse = businessesResponse.data.map(business => ({
       name: business.name,
-      image_url: business.image_url
+      image_url: business.image_url,
+      rating: business.rating,
+      review_count: business.review_count,
+      price: business.price
     }));
     //update state with biz list
     this.setState({
