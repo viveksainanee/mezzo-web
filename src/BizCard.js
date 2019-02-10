@@ -7,7 +7,7 @@ class BizCard extends Component {
       <div className="BizCard">
         <div className="business-name"> {this.props.business.name}</div>
         <div className="business-rating">
-          {this.props.business.rating}, {this.props.business.review_count}{' '}
+          {this.props.business.rating}, {this.props.business.review_count}
           Reviews
         </div>
         <div className="business-price">{this.props.business.price}</div>

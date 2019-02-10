@@ -32,12 +32,12 @@ class Form extends Component {
           placeholder="First Location"
         />
 
-        <input
+        {/* <input
           name="loc2"
           onChange={this.handleChange}
           value={this.state.loc2}
           placeholder="Second Location"
-        />
+        /> */}
         <input type="submit" onChange={this.handleSubmit} value="Submit" />
       </form>
     );
